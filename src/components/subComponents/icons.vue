@@ -102,10 +102,7 @@ export default {
 }
 .icons-wrapper {
   width: 100%;
-<<<<<<< HEAD
-=======
   margin-top: 0.1rem;
->>>>>>> origin/weekend
   .icons-item {
     flex: 0 0 25%;
     position: relative;

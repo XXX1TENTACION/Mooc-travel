@@ -4,7 +4,7 @@
       <swiper-slide v-for="page in pages" :key="page.$index">
         <div class="icons-item" v-for="item in page" :key="item.id">
           <div class="img-wrapper">
-            <img :src="item.imgUrl" width="75" />
+            <img :src="item.imgUrl" width="70" />
           </div>
           <p class="icons-desc">{{item.desc}}</p>
         </div>
@@ -15,65 +15,13 @@
 <script>
 export default {
   name: "icons",
+  props: {
+    iconList: {
+      type: Array
+    }
+  },
   data() {
-    return {
-      iconList: [
-        {
-          id: 1,
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          desc: "热门景点"
-        },
-        {
-          id: 2,
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          desc: "热门景点"
-        },
-        {
-          id: 3,
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          desc: "热门景点"
-        },
-        {
-          id: 4,
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          desc: "热门景点"
-        },
-        {
-          id: 5,
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          desc: "热门景点"
-        },
-        {
-          id: 6,
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          desc: "热门景点"
-        },
-        {
-          id: 7,
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          desc: "热门景点"
-        },
-        {
-          id: 8,
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          desc: "热门景点"
-        },
-        {
-          id: 9,
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          desc: "热门景点"
-        }
-      ]
-    };
+    return {};
   },
   computed: {
     //将数据组织成[[{...},{....},第一页的八条数据]，[第二页的数据]，[第三页的数据]]，二位数组的形式

@@ -7,15 +7,20 @@
       <span class="iconfont iconsousuo"></span>
       <span>输入喜欢城市，游玩景点</span>
     </div>
-    <div class="header-right">
-      <span class="text">城市</span>
+    <router-link to="/city" tag="div" class="header-right">
+      <span class="text">{{ city }}</span>
       <span class="iconfont iconarrow-left-copy-copy arrow"></span>
-    </div>
+    </router-link>
   </div>
 </template>
 <script>
 export default {
   name: "Header",
+  props: {
+    city: {
+      type: String
+    }
+  },
   data() {
     return {};
   }
@@ -27,7 +32,7 @@ export default {
   height: 0.86rem;
   display: flex;
   background-color: $bgColor;
-  line-height: 0.86rem;
+  line-height: $headerHeight;
   color: #fff;
   .header-left {
     flex: 0 0 0.64rem;

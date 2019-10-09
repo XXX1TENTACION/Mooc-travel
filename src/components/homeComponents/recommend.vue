@@ -22,35 +22,13 @@
 <script>
 export default {
   name: "recommend",
+  props: {
+    recommendList: {
+      type: Array
+    }
+  },
   data() {
-    return {
-      recommendList: [
-        {
-          id: 1,
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1804/1a/1a48cc20b0d6ed44a3.img.jpg_200x200_32e22bed.jpg",
-          title: "奥林匹克塔",
-          desc:
-            "室外展区设计遵循“师法自然，道法自然”的设计理念，在不破坏原有自然景观的前提下进行的设计，"
-        },
-        {
-          id: 2,
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1804/1a/1a48cc20b0d6ed44a3.img.jpg_200x200_32e22bed.jpg",
-          title: "奥林匹克塔",
-          desc:
-            "室外展区设计遵循“师法自然，道法自然”的设计理念，在不破坏原有自然景观的前提下进行的设计，"
-        },
-        {
-          id: 3,
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1804/1a/1a48cc20b0d6ed44a3.img.jpg_200x200_32e22bed.jpg",
-          title: "奥林匹克塔",
-          desc:
-            "室外展区设计遵循“师法自然，道法自然”的设计理念，在不破坏原有自然景观的前提下进行的设计，"
-        }
-      ]
-    };
+    return {};
   }
 };
 </script>

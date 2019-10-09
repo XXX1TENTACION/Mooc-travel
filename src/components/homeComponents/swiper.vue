@@ -1,5 +1,5 @@
 <template>
-  <div class="swiper-wrapper">
+  <div class="swiper-wrapper" v-if="swiperList.length">
     <swiper :options="swiperOption">
       <swiper-slide v-for="item in swiperList" :key="item.id">
         <img :src="item.imgUrl" width="100%" />
@@ -11,26 +11,20 @@
 <script>
 export default {
   name: "HomeSwiper",
+  props: {
+    swiperList: {
+      type: Array
+    }
+  },
   data() {
     return {
       swiperOption: {
         pagination: {
           el: ".swiper-pagination" //dots
         },
-        loop: true //循环轮播
-      },
-      swiperList: [
-        {
-          id: 1,
-          imgUrl:
-            "//mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20198/b59b8db9f72eb8f54df5bf2155672e9c.jpg"
-        },
-        {
-          id: 2,
-          imgUrl:
-            "//mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20197/3f5ff03fa0c024b930f515e63ae2c702.jpg_945x288_7dff4510.jpg"
-        }
-      ]
+        loop: true, //循环轮播
+        autoplay: true
+      }
     };
   }
 };

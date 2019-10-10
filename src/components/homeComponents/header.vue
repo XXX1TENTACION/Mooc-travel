@@ -14,15 +14,14 @@
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
 export default {
   name: "Header",
-  props: {
-    city: {
-      type: String
-    }
-  },
   data() {
     return {};
+  },
+  computed: {
+    ...mapState(["city"])
   }
 };
 </script>
@@ -50,15 +49,18 @@ export default {
     padding-left: 0.2rem;
   }
   .header-right {
-    flex: 0 0 1.24rem;
-    text-align: center;
+    min-width: 1.04rem;
+    padding: 0.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 0;
     .text {
-      font-size: 0.24rem;
+      font-size: 13px;
       margin-right: 0.1rem;
     }
     .arrow {
-      font-size: 0.24rem;
+      font-size: 12px;
     }
   }
 }

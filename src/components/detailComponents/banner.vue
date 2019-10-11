@@ -1,14 +1,11 @@
 <template>
-  <div class="banner">
-    <img
-      width="100%"
-      src="//img1.qunarzz.com/sight/p0/1507/36/ce3d2d6c9ab44d67ae68d940b8781829.water.jpg_600x330_f68eb231.jpg"
-    />
+  <div class="banner" @click="gallaryShow">
+    <img width="100%" :src="bannerImg" />
     <div class="banner-info">
-      <div class="banner-title">北京野生动物园</div>
+      <div class="banner-title">{{sightName}}</div>
       <div class="banner-number">
         <span class="iconfont iconpicture pic"></span>
-        <span class="number">14</span>
+        <span class="number">{{ gallaryImgs.length }}</span>
       </div>
     </div>
   </div>
@@ -16,8 +13,18 @@
 <script>
 export default {
   name: "banner",
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array
+  },
   data() {
     return {};
+  },
+  methods: {
+    gallaryShow() {
+      this.$emit("imgShow");
+    }
   }
 };
 </script>

@@ -5,6 +5,7 @@ import App from "./App";
 import router from "./router";
 import fastClick from "fastclick"; //解决移动端点击300毫秒延迟的情况
 import VueAwesomeSwiper from "vue-awesome-swiper"; //轮播图
+import "babel-polyfill"; //解决浏览器不支持promise的情况
 import "css/reset.css";
 import "css/border.css"; //解决移动端一像素边框的问题
 import "css/iconfont.css"; //字体图标

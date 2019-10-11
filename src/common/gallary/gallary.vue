@@ -1,18 +1,9 @@
 <template>
-  <div class="gallary">
+  <div class="gallary" @click="gallaryHide">
     <div class="gallary-wrapper">
       <swiper :options="swiperOption">
-        <swiper-slide>
-          <img
-            src="http://img1.qunarzz.com/sight/p0/1507/36/ce3d2d6c9ab44d67ae68d940b8781829.water.jpg_r_800x800_7462ee3a.jpg"
-            width="100%"
-          />
-        </swiper-slide>
-        <swiper-slide>
-          <img
-            src="http://img1.qunarzz.com/sight/p0/1908/3f/3f75f9179e233684a3.img.jpg_r_800x800_208f8cc8.jpg"
-            width="100%"
-          />
+        <swiper-slide v-for="item in gallaryImgs" :key="item.$index">
+          <img :src="item" width="100%" height="260" />
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
@@ -22,15 +13,29 @@
 <script>
 export default {
   name: "gallary",
+  props: {
+    gallaryImgs: {
+      type: Array
+    }
+  },
   data() {
     return {
       swiperOption: {
         pagination: {
+          //配置分页
           el: ".swiper-pagination",
           type: "fraction"
-        }
+        },
+        //配置画廊自动更新
+        observeParents: true,
+        observer: true
       }
     };
+  },
+  methods: {
+    gallaryHide() {
+      this.$emit("imgHide");
+    }
   }
 };
 </script>

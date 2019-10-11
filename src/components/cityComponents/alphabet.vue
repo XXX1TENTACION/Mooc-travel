@@ -6,7 +6,7 @@
         v-for="item of letters"
         :key="item"
         @click="postInfo"
-        @touchstart="touchStart"
+        @touchstart.prevent="touchStart"
         @touchmove="touchMove"
         @touchend="touchEnd"
         :ref="item"

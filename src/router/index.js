@@ -22,5 +22,9 @@ export default new Router({
       name: "detail",
       component: Detail
     }
-  ]
+  ],
+  //每次进入到新的路由页面时都让页面从顶部开始显示
+  scrollBehavior(to, from, savedPosition) {
+    return { x: 0, y: 0 };
+  }
 });
